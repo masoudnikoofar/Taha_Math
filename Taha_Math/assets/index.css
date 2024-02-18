@@ -216,3 +216,22 @@ button
 	border-radius: 10px;	margin: 10px;
 	padding:10px;
 }
+
+.result_trigonometry_result
+{
+
+}
+.result_trigonometry_result_title
+{
+	width: 20%;
+	background-color: var(--background-color1);
+	display:inline-block;
+	text-align: left;
+}
+.result_trigonometry_result_number
+{
+	width: 10%;
+	background-color: var(--background-color2);
+	display:inline-block;
+	text-align: right;
+}

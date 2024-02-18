@@ -24,11 +24,20 @@
 
     {% if form_submitted %}
         <div class="result">
-            <div>
-                <span>سینوس: {{ result.sin }}</span>
-                <span>کسیونوس: {{ result.cos }}</span>
-                <span>تانژانت: {{ result.tan }}</span>
-                <span>کتانژانت: {{ result.cotan }}</span>
+            <div class="result_trigonometry_result">
+                <div class="result_trigonometry_result_row">
+                    <div class="result_trigonometry_result_title">سینوس:</div><div class="result_trigonometry_result_number">{{ result.sin }}</div>
+                </div>
+                <div class="result_trigonometry_result_row">
+                    <div class="result_trigonometry_result_title">کسیونوس:</div><div class="result_trigonometry_result_number">{{ result.cos }}</div>
+                </div>
+                <div class="result_trigonometry_result_row">
+                    <div class="result_trigonometry_result_title">تانژانت:</div><div class="result_trigonometry_result_number">{{ result.tan }}</div>
+                </div>
+                <div class="result_trigonometry_result_row">
+                    <div class="result_trigonometry_result_title">کتانژانت:</div><div class="result_trigonometry_result_number">{{ result.cotan }}</div>
+            
+                </div>
             </div>
             <div>
                 <img src="{% static file_name %}" width="100%">

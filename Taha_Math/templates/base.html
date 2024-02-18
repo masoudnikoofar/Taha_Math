@@ -1,0 +1,17 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mathematics</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <div class="header"><a href="/">تحول دیجیتال در ریاضیات </a></div>
+    <main role="main" class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
+</html>

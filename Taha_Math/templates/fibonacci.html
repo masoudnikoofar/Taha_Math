@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="page_header">
+        فیبوناچی - Fibonacci
+    </div>
+    <div class="form_and_description">
+        <div class="form_and_description_form">
+            <form action="/fibonacci" method="post">
+                {% csrf_token %}
+                {{ fibonacci_form.as_p }}
+                <input type="submit" value="محاسبه">
+            </form>
+        </div>
+        <div class="form_and_description_description">
+            <div class="form_and_description_description_fa">
+                این اعداد به نام لئوناردو فیبوناچی، ریاضی‌دان ایتالیاییِ قرن سیزدهم میلادی، نام‌گذاری شده‌است.
+                در واقع، فیبوناچی در سال ۱۲۰۲ به مسئله عجیبی علاقه‌مند شد. او می‌خواست بداند اگر یک جفت خرگوش نر و ماده داشته باشد و رفتاری برای زاد و ولد آن‌ها تعریف کند در نهایت نتیجه چگونه خواهد شد.
+            </div>
+            <div class="form_and_description_description_en">
+                These numbers are named after Leonardo Fibonacci, a 13th century Italian mathematician. In fact, Fibonacci became interested in a strange problem in 1202. He wanted to know what the result would be if he had a pair of male and female rabbits and defined a behavior for their reproduction.
+            </div>
+        </div>
+    </div>
+    {% if form_submitted %}
+        <div class="result">   
+            نتیجه: {{ result }}
+            <div>
+                <img src="{% static file_name %}" width="100%">
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+

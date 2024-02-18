@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="page_header">
+        مثلثات - Trigonometry
+    </div>
+    <div class="form_and_description">
+        <div class="form_and_description_form">
+            <form action="/trigonometry" method="post">
+                {% csrf_token %}
+                {{ trigonometry_form.as_p }}
+                <input type="submit" value="محاسبه">
+            </form>
+        </div>
+        <div class="form_and_description_description">
+            <div class="form_and_description_description_fa">
+                مثلثات، شاخه ای از ریاضیات که به توابع خاص زوایا و کاربرد آنها در محاسبات مربوط می شود. شش تابع از یک زاویه وجود دارد که معمولاً در مثلثات استفاده می شود. نام و مخفف آنها سینوس (sin)، کسینوس (cos)، مماس (tan) و کوتانژانت (cot) است.
+            </div>
+            <div class="form_and_description_description_en">
+                trigonometry, the branch of mathematics concerned with specific functions of angles and their application to calculations. There are six functions of an angle commonly used in trigonometry. Their names and abbreviations are sine (sin), cosine (cos), tangent (tan) and cotangent (cot).    
+            </div>
+        </div>
+    </div>
+
+    {% if form_submitted %}
+        <div class="result">
+            <div>
+                <span>سینوس: {{ result.sin }}</span>
+                <span>کسیونوس: {{ result.cos }}</span>
+                <span>تانژانت: {{ result.tan }}</span>
+                <span>کتانژانت: {{ result.cotan }}</span>
+            </div>
+            <div>
+                <img src="{% static file_name %}" width="100%">
+            </div>
+        
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+
+
+
+
+

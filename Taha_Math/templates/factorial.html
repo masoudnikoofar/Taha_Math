@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="page_header">
+        فاکتوریل - Factorial
+    </div>
+    <div class="form_and_description">
+        <div class="form_and_description_form">
+            <form action="/factorial" method="post">
+                {% csrf_token %}
+                {{ factorial_form.as_p }}
+                <input type="submit" value="محاسبه">
+            </form>
+        </div>
+        <div class="form_and_description_description">
+            <div class="form_and_description_description_fa">
+                فاکتوریل یک عملیات ریاضی است که شما اینطور می نویسید: n! . این نشان دهنده ضرب همه اعداد بین 1 و n است. پس اگر قرار بود 3! داشته باشید برای مثال، شما باید 1×2×3 را محاسبه کنید.
+            </div>
+            <div class="form_and_description_description_en">
+                A factorial is a mathematical operation that you write like this: n! . It represents the multiplication of all numbers between 1 and n. So if you were to have 3! , for example, you'd compute 3 x 2 x 1
+            </div>
+        </div>
+    </div>
+    {% if form_submitted %}
+        <div class="result"> 
+            نتیجه: {{ result }}
+        </div>
+    {% endif %}
+{% endblock %}

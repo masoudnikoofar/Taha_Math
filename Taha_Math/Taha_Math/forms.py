@@ -15,3 +15,6 @@ class Exponentiation_Form(forms.Form):
     exponentiation_base = forms.FloatField(label="پایه:")
     exponentiation_power = forms.IntegerField(label="توان:")
     
+
+class Absolute_Form(forms.Form):
+    absolute_number = forms.FloatField(label="عدد:")

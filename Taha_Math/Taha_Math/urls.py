@@ -27,6 +27,8 @@ urlpatterns = [
     path("factorial",views.factorial),
     path("trigonometry",views.trigonometry),
     path("exponentiation",views.exponentiation),
+    path("absolute",views.absolute),
+
 ]
 
 urlpatterns+=staticfiles_urlpatterns()

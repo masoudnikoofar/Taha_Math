@@ -140,3 +140,32 @@ def exponentiation(request):
         exponentiation_form = Exponentiation_Form()
         context = {"form_submitted": False, "exponentiation_form": exponentiation_form}
     return render(request, "exponentiation.html", context) # goes inside views.py
+
+def absolute(request):
+    if request.method == "POST":
+        absolute_form = Absolute_Form(request.POST)
+        if absolute_form.is_valid():
+            n = absolute_form.cleaned_data["absolute_number"]
+            x = []
+            y = []
+            for i in range(-2 * abs(int(n)),2 * abs(int(n)) + 1,1):
+                x.append(i)
+                y.append(abs(i))
+            result = abs(n)
+            matplotlib.use('Agg')
+            plt.figure(figsize=(20,10), dpi=300)#,facecolor='#191919')
+            plt.plot(x,y)
+            plt.plot(n,abs(n),'*',ms=20)
+            #plt.axes().set_facecolor("#BED754")
+            #plt.axes().tick_params(axis="x", colors="#BED754")      # x tick labels
+            #plt.axes().tick_params(axis="y", colors="#BED754")   # y tick labels
+
+            #plt.grid()
+            file_name = "absolute_chart_" + str(uuid.uuid1()) + ".png"
+            plt.savefig('assets/' + file_name)
+            #plt.show()
+        context = {"form_submitted":True , "result" : result, "file_name": file_name, "absolute_form": absolute_form}
+    else:
+        absolute_form = Absolute_Form()   
+        context = {"form_submitted":False, "absolute_form": absolute_form}
+    return render(request, "absolute.html", context) # goes inside views.py

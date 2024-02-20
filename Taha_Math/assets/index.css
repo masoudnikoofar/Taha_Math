@@ -221,17 +221,27 @@ button
 {
 
 }
+.result_trigonometry_result_row
+{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;	margin: 10px;
+	padding: 10px;
+	background-color: var(--background-color1);
+	margin: 10px;
+	margin-left:auto;
+	margin-right: auto;
+	width:50%;
+}
 .result_trigonometry_result_title
 {
-	width: 20%;
-	background-color: var(--background-color1);
+	width: 30%;
 	display:inline-block;
 	text-align: left;
 }
 .result_trigonometry_result_number
 {
-	width: 10%;
-	background-color: var(--background-color2);
+	width: 20%;
 	display:inline-block;
 	text-align: right;
 }

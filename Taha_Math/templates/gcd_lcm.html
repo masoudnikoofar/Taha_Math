@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="page_header">
+        بزرگترین مخرج مشترک / کوچکترین مضرب مشترک - Greatest Common Divisor / Least Common Multiple
+    </div>
+    <div class="form_and_description">
+        <div class="form_and_description_form">
+            <form action="/gcd_lcm" method="post">
+                {% csrf_token %}
+                {{ gcd_lcm_form.as_p }}
+                <input type="submit" value="محاسبه">
+            </form>
+        </div>
+        <div class="form_and_description_description">
+            <div class="form_and_description_description_fa">
+                در ریاضیات، قدر مطلق (به انگلیسی: Absolute value ) یا مقدار مطلقِ یک عددی حقیقی x، که با علامت |x| نشان داده می‌شود، مقدارِ x به صورت غیر منفی و بدون توجه به علامت آن است. پس قدر مطلق یک عدد همواره نامنفی است؛ یعنی یا مثبت است یا صفر. به بیان دیگر، قدر مطلقِ یک عدد برابر است با فاصله آن عدد تا صفر.
+            </div>
+            <div class="form_and_description_description_en">
+                In mathematics, the absolute value or modulus of a real number, denoted, is the non-negative value of without regard to its sign. Namely, if is a positive number, and if is negative, and. For example, the absolute value of 3 is 3, and the absolute value of −3 is also 3.
+            </div>
+        </div>
+    </div>
+    {% if form_submitted %}
+        <div class="result"> 
+            <div>
+                <span>بزرگترین مخرج مشترک: {{ result.gcd }}</span>
+            </div>
+            <div>
+                <span>کوچکترین مضرب مشترک: {{ result.lcm }}</span>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

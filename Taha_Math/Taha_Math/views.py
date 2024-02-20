@@ -169,3 +169,19 @@ def absolute(request):
         absolute_form = Absolute_Form()   
         context = {"form_submitted":False, "absolute_form": absolute_form}
     return render(request, "absolute.html", context) # goes inside views.py
+
+def gcd_lcm(request):
+    if request.method == "POST":
+        gcd_lcm_form = GCD_LCM_Form(request.POST)
+        if gcd_lcm_form.is_valid():
+            n1 = gcd_lcm_form.cleaned_data["gcd_lcm_number1"]
+            n2 = gcd_lcm_form.cleaned_data["gcd_lcm_number2"]
+
+            gcd = math.gcd(n1,n2)
+            lcm = (n1 * n2) // math.gcd(n1,n2)
+            result = {'lcm':lcm,'gcd':gcd}
+        context = {"form_submitted":True , "result" : result, "gcd_lcm_form": gcd_lcm_form}
+    else:
+        gcd_lcm_form = GCD_LCM_Form()   
+        context = {"form_submitted":False, "gcd_lcm_form": gcd_lcm_form}
+    return render(request, "gcd_lcm.html", context) # goes inside views.py

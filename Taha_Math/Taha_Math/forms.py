@@ -18,3 +18,8 @@ class Exponentiation_Form(forms.Form):
 
 class Absolute_Form(forms.Form):
     absolute_number = forms.FloatField(label="عدد:")
+
+class GCD_LCM_Form(forms.Form):
+    gcd_lcm_number1 = forms.IntegerField(label="عدد اول:")
+    gcd_lcm_number2 = forms.IntegerField(label="عدد دوم:")
+

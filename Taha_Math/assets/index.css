@@ -149,10 +149,12 @@ button
 {
 	width: 100%;
 	padding-top: 50px;
+	text-align: center;
 }
 
 .homepage_links_cell
-{
+{	
+	font-size: 30px;
     display: inline-block;
     width: 20%;
 	font-size: 15px;
